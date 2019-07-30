@@ -144,3 +144,8 @@ button[disabled=disabled], button:disabled {
 	color: red;
 	margin: 15px 0px;
 }
+
+.fadeOut {
+    opacity: 0;
+    transition: 0.5s;
+}
