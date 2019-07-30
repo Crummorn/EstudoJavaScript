@@ -6,22 +6,22 @@ pacientes.forEach(paciente => {
     var pacienteAltura = paciente.querySelector('.js-info-altura').textContent;
     var pacienteIMC = paciente.querySelector(".js-info-imc");
     
-    var validaPeso = true;
-    var validaAltura = true;
+    var validPeso = validaPeso(pacientePeso);
+    var validAltura = validaAltura(pacienteAltura);
     
-    if (pacientePeso <= 0 || pacientePeso >= 1000) {
-        validaPeso = false;
+    if (!validPeso) {
+        validPeso = false;
         pacienteIMC.textContent = "Peso Inválido!";
         paciente.classList.add('paciente-invalido');
     }
     
-    if (pacienteAltura <= 0 || pacienteAltura >= 3.00) {
-        validaAltura = false;
+    if (!validAltura) {
+        validAltura = false;
         pacienteIMC.textContent = "Altura Inválida!";
         paciente.classList.add('paciente-invalido');
     }
     
-    if (validaPeso && validaAltura) {
+    if (validPeso && validAltura) {
         pacienteIMC.textContent = calculaIMC(pacientePeso, pacienteAltura); 
     }
 });
