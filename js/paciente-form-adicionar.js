@@ -8,22 +8,25 @@ function adicionarPaciente() {
 
     var paciente = obtemPacienteDoFormulario(form);
 
-    var pacienteTr = montaTr(paciente);
-
     var erros = validaPaciente(paciente);
-
+    console.log(erros);
     if (erros.length > 0) {
         exibeMensagensDeErro(erros);
         return;
     }
 
-    var tabelaPacientes = document.querySelector('#js-tabela-pacientes');
-
-    tabelaPacientes.appendChild(pacienteTr);
+    adicionaPacienteNaTabela(paciente);
 
     form.reset();
+
     var mensagensErro = document.querySelector("#mensagens-erro");
     mensagensErro.innerHTML = "";
+}
+
+function adicionaPacienteNaTabela(paciente) {
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector("#js-tabela-pacientes");
+    tabela.appendChild(pacienteTr);
 }
 
 function obtemPacienteDoFormulario(form) {

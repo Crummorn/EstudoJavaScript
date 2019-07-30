@@ -19,6 +19,7 @@
 				<h2>Meus pacientes</h2>
 				<label for="filtrar-tabela">Pesquisar:</label>
 				<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite o nome do paciente">
+				<span id="erro-ajax" class="invisivel">Erro ao importar pacientes!</span>
 				<table>
 					<thead>
 						<tr>
@@ -70,6 +71,9 @@
 						</tr>
 					</tbody>
 				</table>
+
+				<button id="js-importar-pacientes" class="botao bto-principal">Importar Pacientes</button>
+
 			</section>
 		</main>
 
@@ -106,4 +110,5 @@
 	<script src="js/paciente-form-adicionar.js"></script>
 	<script src="js/paciente-remover.js"></script>
 	<script src="js/paciente-filtrar.js"></script>
+	<script src="js/paciente-importar.js"></script>
 </html>
